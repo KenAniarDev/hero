@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Link from 'next/link'
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
-import baseURL from './baseURL';
+import baseURL from '../baseURL';
 
 
 function index({ heros }) {

@@ -2,7 +2,7 @@ import axios from 'axios';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
-import baseURL from './baseURL';
+import baseURL from '../../baseURL';
 
 function EachHero({ hero }) {
   const router = useRouter()

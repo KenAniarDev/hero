@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router'
 import { MDBBtn, MDBInput } from 'mdb-react-ui-kit';
-import baseURL from './baseURL';
+import baseURL from '../../baseURL';
 
 const AddNewHero = ({ hero }) => {
   const router = useRouter()
