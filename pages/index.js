@@ -31,7 +31,7 @@ function index({ heros }) {
     );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const res = await axios('http://localhost:3000/api/heros')
   const { hero: heros } = res.data
 
