@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router'
 import { MDBBtn, MDBInput } from 'mdb-react-ui-kit';
+import baseURL from './baseURL';
 
 const AddNewHero = ({ hero }) => {
   const router = useRouter()
@@ -21,7 +22,7 @@ const AddNewHero = ({ hero }) => {
   const handleForm = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios(`http://localhost:3000/api/heros/${heroId}`, {
+      const res = await axios(`${baseURL}/api/heros/${heroId}`, {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json"
@@ -58,7 +59,7 @@ const AddNewHero = ({ hero }) => {
 
 export async function getServerSideProps({ params }) {
   const { id } = params
-  const res = await axios(`http://localhost:3000/api/heros/${id}`)
+  const res = await axios(`${baseURL}/api/heros/${id}`)
   const { hero } = res.data
 
   return {

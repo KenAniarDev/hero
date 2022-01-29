@@ -1,0 +1,1 @@
+export default "https://hero-r90gzg16x-kenaniardev.vercel.app/"

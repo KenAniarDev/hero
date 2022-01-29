@@ -2,6 +2,7 @@ import axios from 'axios';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
+import baseURL from './baseURL';
 
 function EachHero({ hero }) {
   const router = useRouter()
@@ -9,7 +10,7 @@ function EachHero({ hero }) {
 
   const deleteHero = async () => {
     try {
-      await axios(`http://localhost:3000/api/heros/${heroId}`, {
+      await axios(`${baseURL}/api/heros/${heroId}`, {
         method: 'DELETE'
       })
       router.push('/')
@@ -38,7 +39,7 @@ function EachHero({ hero }) {
 
 export async function getServerSideProps({ params }) {
   const { id } = params
-  const res = await axios(`http://localhost:3000/api/heros/${id}`)
+  const res = await axios(`${baseURL}/api/heros/${id}`)
   const { hero } = res.data
 
   return {

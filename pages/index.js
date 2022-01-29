@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Link from 'next/link'
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
+import baseURL from './baseURL';
 
 
 function index({ heros }) {
@@ -32,7 +33,8 @@ function index({ heros }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await axios('http://localhost:3000/api/heros')
+  
+  const res = await axios(`${baseURL}/api/heros`)
   const { hero: heros } = res.data
 
   return {
